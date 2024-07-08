@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "Monorepo for Grammerhub Team Mango",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "mango-client:start": "pnpm --filter mango-client start",
+    "mango-client:watch": "pnpm --filter mango-client watch"
   },
   "keywords": [],
   "author": "",
