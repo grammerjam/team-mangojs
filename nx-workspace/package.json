@@ -1,5 +1,5 @@
 {
-  "name": "@nx-monorepo/source",
+  "name": "@nx-workspace/source",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {},
