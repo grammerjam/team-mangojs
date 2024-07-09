@@ -1,10 +1,10 @@
 # team-mangojs
-
 Grammerhub | Team MANGOJS
 
-To run client locally:
+Created front-end with `ng new`
 
+To run:
 ```bash
-cd nx-workspace
-nx serve mango-client
+cd base-client
+ng serve
 ```
