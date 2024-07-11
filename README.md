@@ -16,6 +16,7 @@ To run:
 
 ```bash
 cd base-client
+npm i
 npm start
 ```
 
