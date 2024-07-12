@@ -1,6 +1,12 @@
 # team-mangojs
 
-Grammerhub | Team MANGOJS
+Grammerhub | Team MangoJS
+
+## Contributions
+
+We are using the devcontainers VS Code extension for this app. Please have the [Remote Connections extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack) installed in VS Code and install the [Docker Desktop app](https://www.docker.com/).
+
+When you open VS Code you will be asked to reopen in container. It will take a few minutes to download and run the provided image the first time, but it contains the necessary tooling for our project and should come right up after the first time.
 
 ## Front End
 
@@ -10,7 +16,8 @@ To run:
 
 ```bash
 cd base-client
-ng serve
+npm i
+npm start
 ```
 
 ## Back End
