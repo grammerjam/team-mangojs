@@ -1,12 +1,12 @@
 # team-mangojs
 
-Grammerhub | Team MANGOJS
+Grammerhub | Team MangoJS
 
 ## Contributions
 
-We are using the devcontainers VSCODE extension for this app. Please have Docker Desktop and the Remote Connections extension installed in VSCODE.
+We are using the devcontainers VS Code extension for this app. Please have the [Remote Connections extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack) installed in VS Code and install the [Docker Desktop app](https://www.docker.com/).
 
-When you open VSCODE you will be asked to reopen in container. You will be given two choices. Choose "C# (.NET) and PostgreSQL" for working on the API. Choose "Node.js & TypeScript" for working on the client. It will take a few minutes to download and run the provided images the first time, but they contain the necessary tooling for our project and should come right up after the first time. You will need to open two VSCODE windows to run the front end and the back end at the same time.
+When you open VS Code you will be asked to reopen in container. It will take a few minutes to download and run the provided image the first time, but it contains the necessary tooling for our project and should come right up after the first time.
 
 ## Front End
 
