@@ -37,7 +37,15 @@ jobs:
         working-directory: ./base-client
 
       - name: Build Angular app
-        run: npm run build -- --configuration production
+        run: npm run build -- --configuration production --output-path dist/base-client
+        working-directory: ./base-client
+
+      - name: List dist contents
+        run: ls -R dist
+        working-directory: ./base-client
+
+      - name: Display angular.json
+        run: cat angular.json
         working-directory: ./base-client
 
       - name: Build And Deploy
@@ -52,6 +60,7 @@ jobs:
           app_location: "./base-client" # App source code path
           api_location: "./base-api" # Api source code path - optional
           output_location: "dist/base-client" # Built app content directory - optional
+          app_artifact_location: "dist/base-client"
           ###### End of Repository/Build Configurations ######
 
   close_pull_request_job:
