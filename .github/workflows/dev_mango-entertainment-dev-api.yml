@@ -1,13 +1,15 @@
-# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
-# More GitHub Actions for Azure: https://github.com/Azure/actions
-
-name: Build and deploy ASP.Net Core app to Azure Web App - mango-entertainment-dev-api
+name: Build and deploy ASP.Net Core app to Azure Web App
 
 on:
   push:
-    branches:
-      - dev
-  workflow_dispatch:
+    branches: [dev]
+  pull_request:
+    branches: [main]
+
+env:
+  AZURE_WEBAPP_NAME: mango-entertainment-dev-api
+  DOTNET_VERSION: '8.x'
+  WORKING_DIRECTORY: ./base-api
 
 jobs:
   build:
@@ -19,19 +21,25 @@ jobs:
       - name: Set up .NET Core
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: '8.x'
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+
+      - name: Restore Dependencies
+        run: dotnet restore
+        working-directory: ${{ env.WORKING_DIRECTORY }}
 
       - name: Build with dotnet
-        run: dotnet build --configuration Release
+        run: dotnet build --configuration Release --no-restore
+        working-directory: ${{ env.WORKING_DIRECTORY }}
 
-      - name: dotnet publish
-        run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
+      - name: Publish
+        run: dotnet publish -c Release -o ${{github.workspace}}/publish
+        working-directory: ${{ env.WORKING_DIRECTORY }}
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
           name: .net-app
-          path: ${{env.DOTNET_ROOT}}/myapp
+          path: ${{github.workspace}}/publish
 
   deploy:
     runs-on: ubuntu-latest
@@ -39,18 +47,18 @@ jobs:
     environment:
       name: 'Production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
-    
+
     steps:
       - name: Download artifact from build job
         uses: actions/download-artifact@v4
         with:
           name: .net-app
-      
+
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
         with:
-          app-name: 'mango-entertainment-dev-api'
+          app-name: ${{ env.AZURE_WEBAPP_NAME }}
           slot-name: 'Production'
-          package: .
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_1140C5145B254A12A68F8D7CAFFB1095 }}
+          package: .
