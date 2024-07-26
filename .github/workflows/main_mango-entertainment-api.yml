@@ -8,7 +8,7 @@ on:
 
 env:
   AZURE_WEBAPP_NAME: mango-entertainment-api
-  DOTNET_VERSION: '8.0.x'  # Updated to match your Azure configuration
+  DOTNET_VERSION: '8.0.x'
   WORKING_DIRECTORY: ./base-api
 
 jobs:
@@ -54,10 +54,18 @@ jobs:
         with:
           name: .net-app
 
+      - name: Login to Azure
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
         with:
           app-name: ${{ env.AZURE_WEBAPP_NAME }}
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_PRODUCTION }}
           package: .
+
+      - name: logout
+        run: |
+          az logout
