@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-  workflow_dispatch:
 
 env:
   AZURE_WEBAPP_NAME: mango-entertainment-api
@@ -40,10 +39,6 @@ jobs:
         with:
           name: .net-app
           path: ${{github.workspace}}/publish
-
-      - name: Azure CLI logout
-        run: az logout
-        if: always()
 
   deploy:
     runs-on: ubuntu-latest
