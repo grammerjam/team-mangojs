@@ -1,15 +1,15 @@
-name: Build and deploy ASP.Net Core app to Azure Web App - DEV
+name: Build and deploy ASP.Net Core app to Azure Web App - Production
 
 on:
   push:
-    branches: [dev]
+    branches:
+      - main
     paths:
       - base-api/**
-      - .github/workflows/dev_mango-entertainmant-dev-api.yml
-
+      - .github/workflows/main_manog-entertainment-api.yml
 
 env:
-  AZURE_WEBAPP_NAME: mango-entertainment-dev-api
+  AZURE_WEBAPP_NAME: mango-entertainment-api
   DOTNET_VERSION: '8.x'
   WORKING_DIRECTORY: ./base-api
 
@@ -62,5 +62,5 @@ jobs:
         with:
           app-name: ${{ env.AZURE_WEBAPP_NAME }}
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_1140C5145B254A12A68F8D7CAFFB1095 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_EC08CC2ACD434CBA99B6F674652AC35B }}
           package: .
