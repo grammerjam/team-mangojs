@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - main
+    paths:
+      - base-api/**
+      - .github/workflows/main_manog-entertainment-api.yml
 
 env:
   AZURE_WEBAPP_NAME: mango-entertainment-api

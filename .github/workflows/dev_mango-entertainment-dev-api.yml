@@ -3,6 +3,10 @@ name: Build and deploy ASP.Net Core app to Azure Web App
 on:
   push:
     branches: [dev]
+    paths:
+      - base-api/**
+      - .github/workflows/dev_mango-entertainmant-dev-api.yml
+
 
 env:
   AZURE_WEBAPP_NAME: mango-entertainment-dev-api
