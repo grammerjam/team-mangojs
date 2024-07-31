@@ -20,6 +20,9 @@ npm i
 npm start
 ```
 
+"dev" branch deployed to https://black-sand-06df6ac0f.5.azurestaticapps.net/
+"main" branch deployed to https://mango-plant-07699860f.5.azurestaticapps.net/
+
 ## Back End
 
 Created back end with `dotnet new web`
@@ -30,3 +33,6 @@ To run:
 cd base-api
 dotnet run
 ```
+
+"dev" branch deployed to https://mango-entertainment-dev-api.azurewebsites.net
+"main" branch deployed to https://mango-entertainment-api.azurewebsites.net/
