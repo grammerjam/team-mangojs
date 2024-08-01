@@ -1,15 +1,18 @@
 import { Component } from "@angular/core";
 import { RouterOutlet } from "@angular/router";
+import { HomepageComponent } from "./homepage/homepage.component";
+import { MoviesComponent } from "./movies/movies.component";
+import { SeriesComponent } from "./series/series.component";
+import { BookmarksComponent } from "./bookmarks/bookmarks.component";
+import { NavbarComponent } from "./navbar/navbar.component";
 
 @Component({
 	selector: "app-root",
 	standalone: true,
-	imports: [RouterOutlet],
+	imports: [RouterOutlet, HomepageComponent, MoviesComponent, SeriesComponent, BookmarksComponent, NavbarComponent],
 	templateUrl: "./app.component.html",
 	styleUrl: "./app.component.scss",
 })
 export class AppComponent {
-	title = "Mango-Entertainment";
+	title = "Mango Entertainment";
 }
-
-// this comment
