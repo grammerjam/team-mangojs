@@ -1,28 +1,27 @@
-using System.ComponentModel.DataAnnotations;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
-namespace baseapi.Models;
-
-public class Trending {
-  public string? small {get; set;}
-  public string? large {get; set;}
-
-}
-
-public class Regular {
-  public string? small {get; set;}
-  public string? medium {get; set;}
-
-  public string? large {get; set;}
-
-}
-
-public class Selection
+namespace baseapi.Models
 {
-    public required string Id { get; set; }
-    public required string title { get; set; }
-    public required int year {get; set;}
-    public required string category {get; set;}
-    public required string rating {get; set;}
-    public required bool isBookmarked {get; set;}
-    public required bool isTrending {get; set;}
+  public enum Category
+  {
+    movie, series
+  }
+
+  public class Selection
+  {
+    public int ID { get; set; }
+    public string Title { get; set; }
+    public int Year { get; set; }
+    public Category Category { get; set; }
+    public string Rating { get; set; }
+    public bool isBookmarked { get; set; }
+    public bool isTrending { get; set; }
+
+    public int RegularID { get; set; }
+    public int? TrendingID { get; set; }
+
+    public Regular Regular { get; set; }
+    public Trending? Trending { get; set; }
+  }
 }
