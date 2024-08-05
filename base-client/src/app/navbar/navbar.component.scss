@@ -1,0 +1,15 @@
+@import "_variables";
+
+.nav-container {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  background-color: $mango-semi-dark-blue;
+
+  .app-navbar {
+    align-content: center;
+    text-align: center;
+    a {
+      padding: 0 1rem;
+    }
+  }
+}
