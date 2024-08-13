@@ -1,0 +1,8 @@
+<section>
+  <h2>Series</h2>
+  <div class="selection-container">
+    @for(selectionData of selectionDataList; track selectionData.id) {
+      <app-regular-card [selectionData]="selectionData"></app-regular-card>
+    }
+  </div>
+</section>
