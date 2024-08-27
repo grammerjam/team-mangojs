@@ -11,6 +11,6 @@ import Selections from '../../../data.json'
   styleUrl: './bookmarks.component.scss'
 })
 export class BookmarksComponent {
-  selectionDataList: SelectionData[] = Selections.filter((selection) => selection.isBookmarked === true)
+  selectionDataList: SelectionData[] = Selections.selections.filter((selection) => selection.isBookmarked === true)
 
 }

@@ -11,6 +11,6 @@ import Selections from '../../../data.json'
   styleUrl: './series.component.scss'
 })
 export class SeriesComponent {
-    selectionDataList: SelectionData[] = Selections.filter((selection) => selection.category === "TV Series")
+    selectionDataList: SelectionData[] = Selections.selections.filter((selection) => selection.category === "TV Series")
 
 }
