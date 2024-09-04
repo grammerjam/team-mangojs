@@ -1,0 +1,15 @@
+<h2>Trending</h2>
+  <div class="selection-container">
+    @for(selectionData of trendingDataList; track selectionData.id) {
+              <app-regular-card [selectionData]="selectionData"></app-regular-card>
+            }
+  </div>
+<hr />
+<section>
+  <h2>Recommended</h2>
+  <div class="selection-container">
+        @for(selectionData of recommendedDataList; track selectionData.id) {
+          <app-regular-card [selectionData]="selectionData"></app-regular-card>
+        }
+  </div>
+</section>

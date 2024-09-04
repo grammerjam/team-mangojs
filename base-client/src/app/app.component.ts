@@ -1,10 +1,10 @@
 import { Component } from "@angular/core";
 import { RouterOutlet } from "@angular/router";
-import { HomepageComponent } from "./homepage/homepage.component";
-import { MoviesComponent } from "./movies/movies.component";
-import { SeriesComponent } from "./series/series.component";
-import { BookmarksComponent } from "./bookmarks/bookmarks.component";
-import { NavbarComponent } from "./navbar/navbar.component";
+import { HomepageComponent } from "./pages/homepage/homepage.component";
+import { MoviesComponent } from "./pages/movies/movies.component";
+import { SeriesComponent } from "./pages/series/series.component";
+import { BookmarksComponent } from "./pages/bookmarks/bookmarks.component";
+import { NavbarComponent } from "./components/navbar/navbar.component";
 
 @Component({
 	selector: "app-root",
