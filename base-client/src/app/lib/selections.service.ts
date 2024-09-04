@@ -16,17 +16,32 @@ export class SelectionsService {
 
   protected selections: SelectionData[] = [];
 
+  private apiURL = 'http://localhost:3000/selections'
 
-  fetchSelections(): Observable<SelectionData []> {
-    return this.http.get<SelectionData[]>("http://localhost:3000/selections")
+
+  fetchAllSelections(): Observable<SelectionData []> {
+    return this.http.get<SelectionData[]>(this.apiURL)
   }
 
-  getSelections() {
-    return this.fetchSelections().subscribe((data) => this.selections = data);
+  fetchTrendingSelections(): Observable<SelectionData[]> {
+    return this.http.get<SelectionData[]>(`${this.apiURL}?isTrending=true`)
   }
 
-  addSelections(s: SelectionData): void {
-    this.selections.push(s)
-    this.Selections$.next(this.selections)
+  fetchRecommendedSelections(): Observable<SelectionData[]> {
+    return this.http.get<SelectionData[]>(`${this.apiURL}?isTrending=false`)
+  }
+
+  fetchMovies(): Observable<SelectionData[]> {
+    return this.http.get<SelectionData[]>(`${this.apiURL}?category=Movie`)
+  }
+
+  fetchSeries(): Observable<SelectionData[]> {
+    return this.http.get<SelectionData[]>(`${this.apiURL}?category=TV%20Series`)
+
+  }
+
+  fetchBookmarks(): Observable<SelectionData[]> {
+    return this.http.get<SelectionData[]>(`${this.apiURL}?isBookmarked=true`)
+
   }
 }
