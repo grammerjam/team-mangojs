@@ -1,0 +1,8 @@
+<div class="trending-section">
+  <h2>Trending</h2>
+  <div class="selection-container">
+    @for(selectionData of trendingDataList; track selectionData.id) {
+              <app-trending-card [selectionData]="selectionData"></app-trending-card>
+            }
+  </div>
+</div>

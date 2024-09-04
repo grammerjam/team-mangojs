@@ -1,0 +1,24 @@
+<article class="trending-card">
+  <img class="trending-thumbnail" [src]="selectionData.thumbnail.trending?.small" [srcset]=""
+    [alt]="selectionData.title">
+  <div class="bookmark-icon-container">
+    <div class="bookmark-icon-background">
+    </div>
+    <img class="bookmark-icon"
+      [src]="selectionData.isBookmarked ? './assets/icon-bookmark-full.svg' : './assets/icon-bookmark-empty.svg'"
+      alt="bookmark icon">
+  </div>
+  <div class="trending-card-data-container">
+    <div class="trending-card-data">
+      {{selectionData.year}}
+      <span>•</span>
+      <img class="category-icon"
+        [src]="selectionData.category === 'Movie' ? './assets/icon-category-movie.svg' : './assets/icon-category-tv.svg'"
+        [alt]="selectionData.category">
+      {{selectionData.category}}
+      <span>•</span>
+      {{selectionData.rating}}
+    </div>
+    <h3>{{selectionData.title}}</h3>
+  </div>
+</article>

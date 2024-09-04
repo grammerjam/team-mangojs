@@ -1,0 +1,73 @@
+.trending-card {
+  width: 240px;
+  height: 140px;
+  position: relative;
+}
+
+.trending-thumbnail {
+  width: 240px;
+  height: 140px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+}
+
+.bookmark-icon-container {
+  width: 32px;
+  height: 32px;
+  left: 200px;
+  top: 8px;
+  position: absolute;
+}
+
+.bookmark-icon-background {
+  width: 32px;
+  height: 32px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  opacity: 0.50;
+  background: #10141E;
+  border-radius: 9999px;
+}
+
+.bookmark-icon {
+  width: 11.67px;
+  height: 14px;
+  left: 10px;
+  top: 9px;
+  position: absolute;
+}
+
+.trending-card-data-container {
+  width: 240px;
+  height: 70px;
+  left: 0px;
+  top: 70px;
+  position: absolute;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.75) 100%);
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  padding: 16px;
+}
+
+.trending-card-data {
+  flex-direction: row;
+  gap: 8px;
+  display: flex;
+  font-size: 12px;
+}
+
+.category-icon {
+  width: 12px;
+  height: 12px;
+  margin-top: 2px;
+}
+
+h3 {
+  font-size: 15px;
+  font-weight: 500;
+  margin-top: 4px;
+}
