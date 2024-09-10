@@ -1,13 +1,7 @@
 <article class="trending-card">
   <img class="trending-thumbnail" [src]="selectionData.thumbnail.trending?.small" [srcset]=""
     [alt]="selectionData.title">
-  <div class="bookmark-icon-container">
-    <div class="bookmark-icon-background">
-    </div>
-    <img class="bookmark-icon"
-      [src]="selectionData.isBookmarked ? './assets/icon-bookmark-full.svg' : './assets/icon-bookmark-empty.svg'"
-      alt="bookmark icon">
-  </div>
+  <app-bookmark [isBookmarked]="selectionData.isBookmarked" />
   <div class="trending-card-data-container">
     <div class="trending-card-data">
       {{selectionData.year}}

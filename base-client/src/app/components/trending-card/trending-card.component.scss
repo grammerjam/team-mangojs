@@ -1,7 +1,13 @@
+@import "../styles/variables";
+
 .trending-card {
   width: 240px;
   height: 140px;
   position: relative;
+  @media (min-width: $breakpoint-tablet) {
+      width: 470px;
+      height: 230px;
+    }
 }
 
 .trending-thumbnail {
@@ -12,33 +18,10 @@
   top: 0px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 8px;
-}
-
-.bookmark-icon-container {
-  width: 32px;
-  height: 32px;
-  left: 200px;
-  top: 8px;
-  position: absolute;
-}
-
-.bookmark-icon-background {
-  width: 32px;
-  height: 32px;
-  left: 0px;
-  top: 0px;
-  position: absolute;
-  opacity: 0.50;
-  background: #10141E;
-  border-radius: 9999px;
-}
-
-.bookmark-icon {
-  width: 11.67px;
-  height: 14px;
-  left: 10px;
-  top: 9px;
-  position: absolute;
+  @media (min-width: $breakpoint-tablet) {
+      width: 470px;
+      height: 230px;
+    }
 }
 
 .trending-card-data-container {
@@ -48,9 +31,14 @@
   top: 70px;
   position: absolute;
   background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.75) 100%);
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
   padding: 16px;
+  @media (min-width: $breakpoint-tablet) {
+      width: 470px;
+      height: 90px;
+      top: 140px;
+    }
 }
 
 .trending-card-data {
@@ -58,6 +46,9 @@
   gap: 8px;
   display: flex;
   font-size: 12px;
+  @media (min-width: $breakpoint-tablet) {
+      font-size: 15px;
+    }
 }
 
 .category-icon {
@@ -70,4 +61,7 @@ h3 {
   font-size: 15px;
   font-weight: 500;
   margin-top: 4px;
+  @media (min-width: $breakpoint-tablet) {
+      font-size: 24px;
+  }
 }
