@@ -1,0 +1,28 @@
+@import "../styles/variables";
+
+.trending-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-left: 16px;
+  width: screen;
+  overflow: scroll;
+  margin-bottom: 24px;
+}
+
+h2 {
+  font-size: 20px;
+  @media (min-width: $breakpoint-tablet) {
+    font-size: 32px;
+  }
+}
+
+.selection-container {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+    @media (min-width: $breakpoint-tablet) {
+      gap: 40px;
+    }
+}
