@@ -1,1 +1,8 @@
-<p>regular-section works!</p>
+<section class="regular-section">
+  <h2>{{sectionTitle}}</h2>
+  <div class="selection-container">
+    @for(selectionData of sectionData; track selectionData.id) {
+    <app-regular-card [selectionData]="selectionData"></app-regular-card>
+    }
+  </div>
+</section>

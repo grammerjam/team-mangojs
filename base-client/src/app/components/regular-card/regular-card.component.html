@@ -1,8 +1,10 @@
- <ul>
+ <article class="regular-card">
+      <img class="regular-thumbnail" [src]="selectionData.thumbnail.regular.small" [srcset]="" [alt]="selectionData.title">
+      <app-bookmark [isBookmarked]="selectionData.isBookmarked" />
       <li>{{selectionData.title}}</li>
       <li>{{selectionData.category}}</li>
       <li>{{selectionData.isBookmarked}}</li>
       <li>{{selectionData.isTrending}}</li>
       <li>{{selectionData.rating}}</li>
       <li>{{selectionData.year}}</li>
-</ul>
+</article>
