@@ -3,14 +3,14 @@
   <app-bookmark [isBookmarked]="selectionData.isBookmarked" />
   <div class="regular-card-data-container">
     <div class="regular-card-data">
-      {{selectionData.year}}
-      <span>•</span>
+      <span class="op-75">{{selectionData.year}}</span>
+      <span class="op-50">•</span>
         <img class="regular-category-icon"
           [src]="selectionData.category === 'Movie' ? './assets/icon-category-movie.svg' : './assets/icon-category-tv.svg'"
           [alt]="selectionData.category">
-        {{selectionData.category}}
-      <span>•</span>
-      {{selectionData.rating}}
+        <span class="op-75">{{selectionData.category}}</span>
+      <span class="op-50">•</span>
+      <span class="op-75">{{selectionData.rating}}</span>
     </div>
     <h3>{{selectionData.title}}</h3>
   </div>

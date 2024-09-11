@@ -1,6 +1,17 @@
+@import "../styles/variables";
+@import "../styles/globals";
+
 .regular-card {
- max-width: 164px;
- position: relative;
+  max-width: 164px;
+  position: relative;
+
+  @media (min-width: $breakpoint-tablet) {
+    max-width: 220px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    max-width: 280px;
+  }
 }
 
 .regular-thumbnail {
@@ -8,17 +19,31 @@
   height: 110px;
   border-radius: 8px;
   margin-bottom: 8px;
+
+  @media (min-width: $breakpoint-tablet) {
+    width: 220px;
+    height: 140px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    width: 280px;
+    height: 174px;
+  }
 }
 
 .regular-card-data-container {
-  height: 36px;
   display: flex;
   flex-direction: column;
   gap: 4px;
+
   h3 {
-      font-size: 14px;
-      font-weight: 500;
+    font-size: 14px;
+    font-weight: 500;
+
+    @media (min-width: $breakpoint-tablet) {
+      font-size: 18px;
     }
+  }
 }
 
 .regular-card-data {
@@ -28,8 +53,13 @@
   flex-direction: row;
   align-items: center;
   gap: 6px;
+
   .regular-category-icon {
-      width: 10px;
-      height: 10px;
-    }
+    width: 10px;
+    height: 10px;
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    font-size: 13px;
+  }
 }
