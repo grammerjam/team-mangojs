@@ -1,8 +1,35 @@
 .regular-card {
- 
+ max-width: 164px;
+ position: relative;
 }
 
 .regular-thumbnail {
   width: 164px;
   height: 110px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+.regular-card-data-container {
+  height: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  h3 {
+      font-size: 14px;
+      font-weight: 500;
+    }
+}
+
+.regular-card-data {
+  font-size: 11px;
+  font-weight: 300;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 6px;
+  .regular-category-icon {
+      width: 10px;
+      height: 10px;
+    }
 }

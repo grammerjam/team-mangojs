@@ -1,10 +1,17 @@
- <article class="regular-card">
-      <img class="regular-thumbnail" [src]="selectionData.thumbnail.regular.small" [srcset]="" [alt]="selectionData.title">
-      <app-bookmark [isBookmarked]="selectionData.isBookmarked" />
-      <li>{{selectionData.title}}</li>
-      <li>{{selectionData.category}}</li>
-      <li>{{selectionData.isBookmarked}}</li>
-      <li>{{selectionData.isTrending}}</li>
-      <li>{{selectionData.rating}}</li>
-      <li>{{selectionData.year}}</li>
+<article class="regular-card">
+  <img class="regular-thumbnail" [src]="selectionData.thumbnail.regular.small" [srcset]="" [alt]="selectionData.title">
+  <app-bookmark [isBookmarked]="selectionData.isBookmarked" />
+  <div class="regular-card-data-container">
+    <div class="regular-card-data">
+      {{selectionData.year}}
+      <span>•</span>
+        <img class="regular-category-icon"
+          [src]="selectionData.category === 'Movie' ? './assets/icon-category-movie.svg' : './assets/icon-category-tv.svg'"
+          [alt]="selectionData.category">
+        {{selectionData.category}}
+      <span>•</span>
+      {{selectionData.rating}}
+    </div>
+    <h3>{{selectionData.title}}</h3>
+  </div>
 </article>

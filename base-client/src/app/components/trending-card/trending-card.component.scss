@@ -46,15 +46,14 @@
   gap: 8px;
   display: flex;
   font-size: 12px;
+  .category-icon {
+      width: 12px;
+      height: 12px;
+      margin-top: 2px;
+    }
   @media (min-width: $breakpoint-tablet) {
       font-size: 15px;
     }
-}
-
-.category-icon {
-  width: 12px;
-  height: 12px;
-  margin-top: 2px;
 }
 
 h3 {
