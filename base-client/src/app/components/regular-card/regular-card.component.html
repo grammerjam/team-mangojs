@@ -1,0 +1,17 @@
+<article class="regular-card">
+  <img class="regular-thumbnail" [src]="selectionData.thumbnail.regular.small" [srcset]="" [alt]="selectionData.title">
+  <app-bookmark [isBookmarked]="selectionData.isBookmarked" />
+  <div class="regular-card-data-container">
+    <div class="regular-card-data">
+      <span class="op-75">{{selectionData.year}}</span>
+      <span class="op-50">•</span>
+        <img class="regular-category-icon"
+          [src]="selectionData.category === 'Movie' ? './assets/icon-category-movie.svg' : './assets/icon-category-tv.svg'"
+          [alt]="selectionData.category">
+        <span class="op-75">{{selectionData.category}}</span>
+      <span class="op-50">•</span>
+      <span class="op-75">{{selectionData.rating}}</span>
+    </div>
+    <h3>{{selectionData.title}}</h3>
+  </div>
+</article>

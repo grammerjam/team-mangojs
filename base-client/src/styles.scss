@@ -1,2 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 @use "scss-reset/reset";
+@import "../styles/variables";
+
+.selection-container {
+  display: grid;
+  grid-gap: 2rem;
+  
+  @media (min-width: $breakpoint-desktop) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

@@ -1,0 +1,33 @@
+@import "../styles/variables";
+
+.bookmark-icon-container {
+  width: 32px;
+  height: 32px;
+  right: 8px;
+  top: 8px;
+  position: absolute;
+
+  @media (min-width: $breakpoint-tablet) {
+    right: 12px;
+    top: 12px;
+  }
+}
+
+.bookmark-icon-background {
+  width: 32px;
+  height: 32px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  opacity: 0.50;
+  background: #10141E;
+  border-radius: 9999px;
+}
+
+.bookmark-icon {
+  width: 11.67px;
+  height: 14px;
+  left: 10px;
+  top: 9px;
+  position: absolute;
+}

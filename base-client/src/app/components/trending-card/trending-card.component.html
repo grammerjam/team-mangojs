@@ -1,0 +1,18 @@
+<article class="trending-card">
+  <img class="trending-thumbnail" [src]="selectionData.thumbnail.trending?.small" [srcset]=""
+    [alt]="selectionData.title">
+  <app-bookmark [isBookmarked]="selectionData.isBookmarked" />
+  <div class="trending-card-data-container">
+    <div class="trending-card-data">
+      <span class="op-75">{{selectionData.year}}</span>
+      <span class="op-50">•</span>
+      <img class="category-icon"
+        [src]="selectionData.category === 'Movie' ? './assets/icon-category-movie.svg' : './assets/icon-category-tv.svg'"
+        [alt]="selectionData.category">
+      <span class="op-75">{{selectionData.category}}</span>
+      <span class="op-50">•</span>
+      <span class="op-75">{{selectionData.rating}}</span>
+    </div>
+    <h3>{{selectionData.title}}</h3>
+  </div>
+</article>

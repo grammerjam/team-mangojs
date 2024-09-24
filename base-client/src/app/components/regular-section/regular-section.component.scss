@@ -1,0 +1,40 @@
+@import "../styles/variables";
+@import "../styles/globals";
+
+.regular-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-left: 16px;
+  max-width: calc(100vw - 32px);
+  overflow: scroll;
+  margin-bottom: 24px;
+}
+
+h2 {
+  font-size: 20px;
+
+  @media (min-width: $breakpoint-tablet) {
+    font-size: 32px;
+  }
+}
+
+.regular-selection-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 16px 15px;
+
+  @media (min-width: $breakpoint-tablet) {
+    
+    gap: 24px 29px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    
+    justify-items: center;
+    gap: 32px;
+    width: 100%;
+  }
+}
