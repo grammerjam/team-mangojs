@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
+    "dev": "concurrently 'ng serve --host 0.0.0.0 --port 4200' 'npx json-server --watch src/data.json'",
     "start": "ng serve --host 0.0.0.0 --port 4200",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
@@ -22,6 +23,7 @@
     "@angular/platform-browser": "^18.0.0",
     "@angular/platform-browser-dynamic": "^18.0.0",
     "@angular/router": "^18.0.0",
+    "concurrently": "^9.0.0",
     "json-server": "^1.0.0-beta.2",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",

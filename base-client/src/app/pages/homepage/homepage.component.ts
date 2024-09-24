@@ -1,15 +1,15 @@
 import { Component } from '@angular/core';
-import { RegularCardComponent } from '../../components/regular-card/regular-card.component';
 import { SelectionData } from '../../interfaces/selection-data';
 import { AsyncPipe } from '@angular/common';
 import { SelectionsService } from '../../lib/selections.service';
 import { Subscription } from 'rxjs';
 import { TrendingSectionComponent } from '../../components/trending-section/trending-section.component';
+import { RegularSectionComponent } from '../../components/regular-section/regular-section.component';
 
 @Component({
   selector: 'app-homepage',
   standalone: true,
-  imports: [RegularCardComponent, AsyncPipe, TrendingSectionComponent],
+  imports: [AsyncPipe, TrendingSectionComponent, RegularSectionComponent],
   templateUrl: './homepage.component.html',
   styleUrl: './homepage.component.scss',
 })

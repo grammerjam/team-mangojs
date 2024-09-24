@@ -1,9 +1,2 @@
 <app-trending-section />
-<section>
-  <!-- <h2>Recommended</h2>
-  <div class="selection-container">
-        @for(selectionData of recommendedDataList; track selectionData.id) {
-          <app-regular-card [selectionData]="selectionData"></app-regular-card>
-        }
-  </div> -->
-</section>
+<app-regular-section sectionTitle="Recommended for you" [sectionData]="recommendedDataList" />
