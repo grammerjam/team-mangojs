@@ -2,8 +2,8 @@ namespace baseapi.Models
 {
   public class Trending
   {
-    public int ID { get; set; }
-    public string small { get; set; }
-    public string large { get; set; }
+    public required int ID { get; set; }
+    public required string Small { get; set; }
+    public required string Large { get; set; }
   }
 }

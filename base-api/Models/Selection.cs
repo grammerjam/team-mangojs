@@ -10,18 +10,16 @@ namespace baseapi.Models
 
   public class Selection
   {
-    public int ID { get; set; }
-    public string Title { get; set; }
-    public int Year { get; set; }
-    public Category Category { get; set; }
-    public string Rating { get; set; }
-    public bool isBookmarked { get; set; }
-    public bool isTrending { get; set; }
+    public required int ID { get; set; }
+    public required string Title { get; set; }
+    public required int Year { get; set; }
+    public required string Category { get; set; }
+    public required string Rating { get; set; }
+    public bool IsBookmarked { get; set; }
+    public bool IsTrending { get; set; }
+    
+    public int ThumbnailID { get; set; }
 
-    public int RegularID { get; set; }
-    public int? TrendingID { get; set; }
-
-    public Regular Regular { get; set; }
-    public Trending? Trending { get; set; }
+    public required Thumbnail Thumbnail { get; set; }
   }
 }

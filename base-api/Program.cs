@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi.Models;
 using baseapi.Models;
 using baseapi.Data;
 
@@ -8,14 +9,25 @@ builder.Services.AddControllers();
 builder.Services.AddDbContext<SelectionContext>(opt =>
     opt.UseNpgsql(@"Host=postgres;Username=postgres;Password=postgres;Database=mango"));
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(c =>
+{
+  c.SwaggerDoc("v1", new OpenApiInfo
+  {
+    Title = "Mango Entertainment API",
+    Description = "Curating the content you love",
+    Version = "v1"
+  });
+});
 
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
 {
   app.UseSwagger();
-  app.UseSwaggerUI();
+  app.UseSwaggerUI(c =>
+   {
+     c.SwaggerEndpoint("/swagger/v1/swagger.json", "Mango Entertainment API V1");
+   });
 }
 
 app.UseHttpsRedirection();
