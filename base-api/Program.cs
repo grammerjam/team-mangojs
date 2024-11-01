@@ -3,11 +3,13 @@ using Microsoft.OpenApi.Models;
 using baseapi.Models;
 using baseapi.Data;
 
+
 var builder = WebApplication.CreateBuilder(args);
+var DB_CONNECTION_STRING = builder.Configuration["DB_CONNECTION_STRING"];
 
 builder.Services.AddControllers();
 builder.Services.AddDbContext<SelectionContext>(opt =>
-    opt.UseNpgsql(@"Host=postgres;Username=postgres;Password=postgres;Database=mango"));
+    opt.UseNpgsql(DB_CONNECTION_STRING));
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {

@@ -1,10 +1,11 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <RootNamespace>base_api</RootNamespace>
+    <UserSecretsId>280fcd0d-d528-4626-8e0e-b5dee81a14ac</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
