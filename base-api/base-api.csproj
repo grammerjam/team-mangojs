@@ -4,11 +4,12 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <RootNamespace>base_api</RootNamespace>
+    <RootNamespace>baseapi</RootNamespace>
     <UserSecretsId>280fcd0d-d528-4626-8e0e-b5dee81a14ac</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="JsonNet.ContractResolvers" Version="2.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.7" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.7">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>

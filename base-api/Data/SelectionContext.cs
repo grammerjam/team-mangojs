@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace baseapi.Data
 {
-  public class SelectionContext : DbContext
+  public class BaseapiContext : DbContext
   {
-    public SelectionContext(DbContextOptions<SelectionContext> options) : base(options) { }
+    public BaseapiContext(DbContextOptions<BaseapiContext> options) : base(options) { }
     public DbSet<Regular> Regulars { get; set; } = null!;
     public DbSet<Trending> Trendings { get; set; } = null!;
     public DbSet<Thumbnail> Thumbnails { get; set; } = null!;
@@ -20,3 +20,4 @@ namespace baseapi.Data
     }
   }
 }
+

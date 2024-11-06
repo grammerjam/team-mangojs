@@ -10,8 +10,8 @@ using baseapi.Data;
 
 namespace base_api.Migrations
 {
-    [DbContext(typeof(SelectionContext))]
-    partial class SelectionContextModelSnapshot : ModelSnapshot
+    [DbContext(typeof(BaseapiContext))]
+    partial class BaseapiContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {

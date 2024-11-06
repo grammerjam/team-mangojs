@@ -11,7 +11,7 @@ using baseapi.Data;
 
 namespace base_api.Migrations
 {
-    [DbContext(typeof(SelectionContext))]
+    [DbContext(typeof(BaseapiContext))]
     [Migration("20241101180927_InitialCreate")]
     partial class InitialCreate
     {

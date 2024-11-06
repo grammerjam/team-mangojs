@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using baseapi.Models;
 using baseapi.Data;
+using Newtonsoft.Json;
 
 namespace baseapi.Controllers
 {
@@ -14,9 +15,9 @@ namespace baseapi.Controllers
   [ApiController]
   public class SelectionsController : ControllerBase
   {
-    private readonly SelectionContext _context;
+    private readonly BaseapiContext _context;
 
-    public SelectionsController(SelectionContext context)
+    public SelectionsController(BaseapiContext context)
     {
       _context = context;
     }
@@ -118,5 +119,6 @@ namespace baseapi.Controllers
     {
       return _context.Selections.Any(e => e.ID == id);
     }
+   
   }
 }
