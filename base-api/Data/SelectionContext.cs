@@ -1,3 +1,4 @@
+using System.Data.Common;
 using baseapi.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -11,12 +12,18 @@ namespace baseapi.Data
     public DbSet<Thumbnail> Thumbnails { get; set; } = null!;
     public DbSet<Selection> Selections { get; set; } = null!;
 
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
+      var DB_CONNECTION_STRING = builder.Configuration["DB_CONNECTION_STRING"];
+      optionsBuilder.UseNpgsql(DB_CONNECTION_STRING);
+
+    }
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-      modelBuilder.Entity<Selection>().Property(e => e.ID).ValueGeneratedOnAdd();
-      modelBuilder.Entity<Regular>().Property(e => e.ID).ValueGeneratedOnAdd();
-      modelBuilder.Entity<Trending>().Property(e => e.ID).ValueGeneratedOnAdd();
-      modelBuilder.Entity<Thumbnail>().Property(e => e.ID).ValueGeneratedOnAdd();
+      modelBuilder.Entity<Selection>().Property(e => e.Id).ValueGeneratedOnAdd();
+      modelBuilder.Entity<Regular>().Property(e => e.Id).ValueGeneratedOnAdd();
+      modelBuilder.Entity<Trending>().Property(e => e.Id).ValueGeneratedOnAdd();
+      modelBuilder.Entity<Thumbnail>().Property(e => e.Id).ValueGeneratedOnAdd();
     }
   }
 }

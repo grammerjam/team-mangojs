@@ -10,8 +10,9 @@ var builder = WebApplication.CreateBuilder(args);
 var DB_CONNECTION_STRING = builder.Configuration["DB_CONNECTION_STRING"];
 
 builder.Services.AddControllers();
-builder.Services.AddDbContext<BaseapiContext>(opt =>
-    opt.UseNpgsql(DB_CONNECTION_STRING));
+// builder.Services.AddDbContext<BaseapiContext>(opt =>
+//     opt.UseNpgsql(DB_CONNECTION_STRING));
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
