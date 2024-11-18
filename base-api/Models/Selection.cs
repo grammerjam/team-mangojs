@@ -10,7 +10,7 @@ namespace baseapi.Models
 
   public class Selection
   {
-    public required int Id { get; set; }
+    public required string Id { get; set; }
     public required string Title { get; set; }
     public required int Year { get; set; }
     public required string Category { get; set; }
@@ -18,7 +18,7 @@ namespace baseapi.Models
     public bool IsBookmarked { get; set; }
     public bool IsTrending { get; set; }
     
-    public int ThumbnailId { get; set; }
+    public string ThumbnailId { get; set; }
 
     public required Thumbnail Thumbnail { get; set; }
   }

@@ -46,9 +46,9 @@ namespace baseapi.Controllers
     // PUT: api/Selections/5
     // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
     [HttpPut("{id}")]
-    public async Task<IActionResult> PutSelection(int id, Selection selection)
+    public async Task<IActionResult> PutSelection(string id, Selection selection)
     {
-      if (id != selection.ID)
+      if (id != selection.Id)
       {
         return BadRequest();
       }
@@ -86,7 +86,7 @@ namespace baseapi.Controllers
       }
       catch (DbUpdateException)
       {
-        if (SelectionExists(selection.ID))
+        if (SelectionExists(selection.Id))
         {
           return Conflict();
         }
@@ -96,7 +96,7 @@ namespace baseapi.Controllers
         }
       }
 
-      return CreatedAtAction(nameof(GetSelection), new { id = selection.ID }, selection);
+      return CreatedAtAction(nameof(GetSelection), new { id = selection.Id }, selection);
     }
 
     // DELETE: api/Selections/5
@@ -115,9 +115,9 @@ namespace baseapi.Controllers
       return NoContent();
     }
 
-    private bool SelectionExists(int id)
+    private bool SelectionExists(string id)
     {
-      return _context.Selections.Any(e => e.ID == id);
+      return _context.Selections.Any(e => e.Id == id);
     }
    
   }
