@@ -4,8 +4,6 @@ using Newtonsoft.Json;
 
 public class Seeder
 {
-  // using var scope = app.Services.CreateScope();
-  // using var db = scope.ServiceProvider.GetRequiredService<BaseapiContext>();
   private readonly BaseapiContext _context;
   public Seeder(BaseapiContext context)
   {
@@ -22,7 +20,7 @@ public class Seeder
     _context.Database.EnsureCreated();
     if (!_context.Selections.Any())
     {
-      string jsonValue = "";
+      string jsonValue;
       string fileName = @"data.json";
       using FileStream openStream = File.OpenRead(fileName);
       using StreamReader reader = new StreamReader(openStream);
@@ -30,7 +28,9 @@ public class Seeder
 
 
       var selections = JsonConvert.DeserializeObject<IList<Selection>>(jsonValue);
-
+      Console.WriteLine("*************");
+      Console.WriteLine(selections.Count());
+      Console.WriteLine("*************");
       // foreach (var item in selections)
       // {
       //   db.Selections.Add(new Selection

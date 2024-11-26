@@ -11,7 +11,7 @@ using baseapi.Data;
 namespace baseapi.Migrations
 {
     [DbContext(typeof(BaseapiContext))]
-    [Migration("20241118202755_Initial")]
+    [Migration("20241126212829_Initial")]
     partial class Initial
     {
         /// <inheritdoc />

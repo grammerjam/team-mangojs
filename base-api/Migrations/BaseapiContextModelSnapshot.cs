@@ -7,7 +7,7 @@ using baseapi.Data;
 
 #nullable disable
 
-namespace base_api.Migrations
+namespace baseapi.Migrations
 {
     [DbContext(typeof(BaseapiContext))]
     partial class BaseapiContextModelSnapshot : ModelSnapshot
