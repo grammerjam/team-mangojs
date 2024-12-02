@@ -1,12 +1,28 @@
+using baseapi.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
-using baseapi.Data;
 
-
+// var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddCors(options =>
+{
+  options.AddPolicy("AllowAngularApp",
+                    builder => builder
+                      .WithOrigins("http://localhost:4200", "https://localhost:4200")
+                      .AllowAnyMethod()
+                      .AllowAnyHeader()
+                      .AllowCredentials()
+                      .SetIsOriginAllowedToAllowWildcardSubdomains()
+                    );
+});
+
 var DB_CONNECTION_STRING = builder.Configuration.GetConnectionString("DB_CONNECTION_STRING");
 
-builder.Services.AddControllers();
+builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+      options.JsonSerializerOptions.PropertyNamingPolicy = null;
+    });
 builder.Services.AddDbContext<BaseapiContext>(opt =>
     opt.UseNpgsql(DB_CONNECTION_STRING));
 builder.Services.AddTransient<Seeder>();
@@ -35,6 +51,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors("AllowAngularApp");
 
 app.UseAuthorization();
 

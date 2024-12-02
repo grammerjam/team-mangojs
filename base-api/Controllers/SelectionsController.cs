@@ -6,8 +6,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using baseapi.Models;
-using baseapi.Data;
 using Newtonsoft.Json;
+using System.Text.Json;
 
 namespace baseapi.Controllers
 {
@@ -26,7 +26,23 @@ namespace baseapi.Controllers
     [HttpGet]
     public async Task<ActionResult<IEnumerable<Selection>>> GetSelections()
     {
-      return await _context.Selections.ToListAsync();
+      var data = await _context.Selections.ToListAsync();
+
+      // return Json(data);
+
+      string json = JsonConvert.SerializeObject(data, Formatting.Indented);
+      Console.WriteLine(json);
+
+      return new JsonResult(
+        data,
+        new JsonSerializerOptions { PropertyNamingPolicy = null });
+    }
+
+    // GET: api/Selections/trending
+    [HttpGet("trending")]
+    public async Task<ActionResult<IEnumerable<Selection>>> GetTrendingSelections()
+    {
+      return await _context.Selections.Where(Selection => Selection.IsTrending).ToListAsync();
     }
 
     // GET: api/Selections/5
