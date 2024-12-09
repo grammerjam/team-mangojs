@@ -30,3 +30,7 @@ To run:
 cd base-api
 dotnet run
 ```
+
+### Mango Dot Net
+
+https://www.mermaidchart.com/raw/5f9cedfb-de60-4bfb-9a45-bcf379936800?theme=dark&version=v0.1&format=svg

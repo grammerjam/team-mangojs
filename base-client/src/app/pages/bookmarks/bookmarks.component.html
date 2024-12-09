@@ -1,7 +1,7 @@
 <section>
   <h2>Bookmarks</h2>
   <div class="selection-container">
-    @for(selectionData of selectionDataList; track selectionData.id) {
+    @for(selectionData of bookmarkDataList; track selectionData.id) {
       <app-regular-card [selectionData]="selectionData"></app-regular-card>
     }
   </div>

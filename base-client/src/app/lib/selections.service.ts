@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { BehaviorSubject, Observable } from "rxjs";
 import { SelectionData } from '../interfaces/selection-data';
+import { environment } from '../../environments/environment.development';
 
 @Injectable({
   providedIn: 'root'
@@ -16,32 +17,31 @@ export class SelectionsService {
 
   protected selections: SelectionData[] = [];
 
-  private apiURL = 'http://localhost:3000/selections'
-
 
   fetchAllSelections(): Observable<SelectionData []> {
-    return this.http.get<SelectionData[]>(this.apiURL)
+    return this.http.get<SelectionData[]>(environment.apiURL)
   }
 
+
   fetchTrendingSelections(): Observable<SelectionData[]> {
-    return this.http.get<SelectionData[]>(`${this.apiURL}?isTrending=true`)
+    return this.http.get<SelectionData[]>(`${environment.apiURL}/trending`)
   }
 
   fetchRecommendedSelections(): Observable<SelectionData[]> {
-    return this.http.get<SelectionData[]>(`${this.apiURL}?isTrending=false`)
+    return this.http.get<SelectionData[]>(`${environment.apiURL}/recommended`)
   }
 
   fetchMovies(): Observable<SelectionData[]> {
-    return this.http.get<SelectionData[]>(`${this.apiURL}?category=Movie`)
+    return this.http.get<SelectionData[]>(`${environment.apiURL}/movies`)
   }
 
   fetchSeries(): Observable<SelectionData[]> {
-    return this.http.get<SelectionData[]>(`${this.apiURL}?category=TV%20Series`)
+    return this.http.get<SelectionData[]>(`${environment.apiURL}/series`)
 
   }
 
   fetchBookmarks(): Observable<SelectionData[]> {
-    return this.http.get<SelectionData[]>(`${this.apiURL}?isBookmarked=true`)
+    return this.http.get<SelectionData[]>(`${environment.apiURL}/bookmarks`)
 
   }
 }

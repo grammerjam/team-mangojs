@@ -1,0 +1,2 @@
+@hostAddress = http://localhost:5100/api/selections/
+GET {{hostAddress}}
