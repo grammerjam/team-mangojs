@@ -59,6 +59,39 @@ namespace baseapi.Controllers
       return data;
     }
 
+    // GET: api/Selections/series
+    [HttpGet("series")]
+    public async Task<ActionResult<IEnumerable<Selection>>> GetSeries()
+    {
+      var data = await _context.Selections.Where(Selection => Selection.Category == "TV Series")
+      .Include(Thumb => Thumb.Thumbnail)
+        .ThenInclude(Reg => Reg.Regular)
+      .ToListAsync();
+      return data;
+    }
+
+    // GET: api/Selections/movies
+    [HttpGet("movies")]
+    public async Task<ActionResult<IEnumerable<Selection>>> GetMovies()
+    {
+      var data = await _context.Selections.Where(Selection => Selection.Category == "Movie")
+      .Include(Thumb => Thumb.Thumbnail)
+        .ThenInclude(Reg => Reg.Regular)
+      .ToListAsync();
+      return data;
+    }
+
+    // GET: api/Selections/bookmarks
+    [HttpGet("bookmarks")]
+    public async Task<ActionResult<IEnumerable<Selection>>> GetBookmarks()
+    {
+      var data = await _context.Selections.Where(Selection => Selection.IsBookmarked)
+      .Include(Thumb => Thumb.Thumbnail)
+        .ThenInclude(Reg => Reg.Regular)
+      .ToListAsync();
+      return data;
+    }
+
     // GET: api/Selections/5
     [HttpGet("{id}")]
     public async Task<ActionResult<Selection>> GetSelection(string id)

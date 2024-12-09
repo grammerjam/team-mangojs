@@ -32,16 +32,16 @@ export class SelectionsService {
   }
 
   fetchMovies(): Observable<SelectionData[]> {
-    return this.http.get<SelectionData[]>(`${environment.apiURL}?category=Movie`)
+    return this.http.get<SelectionData[]>(`${environment.apiURL}/movies`)
   }
 
   fetchSeries(): Observable<SelectionData[]> {
-    return this.http.get<SelectionData[]>(`${environment.apiURL}?category=TV%20Series`)
+    return this.http.get<SelectionData[]>(`${environment.apiURL}/series`)
 
   }
 
   fetchBookmarks(): Observable<SelectionData[]> {
-    return this.http.get<SelectionData[]>(`${environment.apiURL}?isBookmarked=true`)
+    return this.http.get<SelectionData[]>(`${environment.apiURL}/bookmarks`)
 
   }
 }
