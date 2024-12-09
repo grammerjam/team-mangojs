@@ -33,13 +33,13 @@ dotnet run
 
 ### Deployments
 
-Staging:
-Frontend: https://black-sand-06df6ac0f.5.azurestaticapps.net/
-API: https://mango-entertainment-dev-api.azurewebsites.net/
+#### Staging:
+- Frontend: https://black-sand-06df6ac0f.5.azurestaticapps.net/
+- API: https://mango-entertainment-dev-api.azurewebsites.net/
 
-Prod:
-Frontend: https://mango-plant-07699860f.5.azurestaticapps.net/
-API: https://mango-entertainment-api.azurewebsites.net/
+#### Prod:
+- Frontend: https://mango-plant-07699860f.5.azurestaticapps.net/
+- API: https://mango-entertainment-api.azurewebsites.net/
 
 ### Mango Dot Net
 
