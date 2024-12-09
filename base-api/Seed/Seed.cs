@@ -18,7 +18,7 @@ public class Seeder
 
     // db.Database.EnsureDeleted();
     _context.Database.EnsureCreated();
-    Console.WriteLine(_context.Selections.ToJson());
+    // Console.WriteLine(_context.Selections.ToJson());
     if (!_context.Selections.Any())
     {
       string jsonValue;

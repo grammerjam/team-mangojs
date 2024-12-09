@@ -3,12 +3,13 @@ import { SelectionsService } from '../../lib/selections.service';
 import { SelectionData } from '../../interfaces/selection-data';
 import { Subscription } from 'rxjs';
 import { TrendingCardComponent } from '../trending-card/trending-card.component';
+import { NgIf } from '@angular/common';
 
 
 @Component({
   selector: 'app-trending-section',
   standalone: true,
-  imports: [TrendingCardComponent],
+  imports: [TrendingCardComponent, NgIf],
   templateUrl: './trending-section.component.html',
   styleUrl: './trending-section.component.scss'
 })

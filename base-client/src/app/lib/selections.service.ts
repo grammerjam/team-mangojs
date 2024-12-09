@@ -24,12 +24,11 @@ export class SelectionsService {
 
 
   fetchTrendingSelections(): Observable<SelectionData[]> {
-    return this.http.get<SelectionData[]>(`${environment.apiURL}?isTrending=true`)
+    return this.http.get<SelectionData[]>(`${environment.apiURL}/trending`)
   }
 
   fetchRecommendedSelections(): Observable<SelectionData[]> {
-    console.log(environment.apiURL)
-    return this.http.get<SelectionData[]>(`${environment.apiURL}?isTrending=false`)
+    return this.http.get<SelectionData[]>(`${environment.apiURL}/recommended`)
   }
 
   fetchMovies(): Observable<SelectionData[]> {

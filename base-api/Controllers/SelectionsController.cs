@@ -31,7 +31,6 @@ namespace baseapi.Controllers
       // return Json(data);
 
       string json = JsonConvert.SerializeObject(data, Formatting.Indented);
-      Console.WriteLine(json);
 
       return new JsonResult(
         data,
@@ -42,7 +41,22 @@ namespace baseapi.Controllers
     [HttpGet("trending")]
     public async Task<ActionResult<IEnumerable<Selection>>> GetTrendingSelections()
     {
-      return await _context.Selections.Where(Selection => Selection.IsTrending).ToListAsync();
+      var data = await _context.Selections.Where(Selection => Selection.IsTrending)
+      .Include(Thumb => Thumb.Thumbnail)
+        .ThenInclude(Trend => Trend.Trending)
+      .ToListAsync();
+      return data;
+    }
+
+    // GET: api/Selections/recommended
+    [HttpGet("recommended")]
+    public async Task<ActionResult<IEnumerable<Selection>>> GetRecommendedSelections()
+    {
+      var data = await _context.Selections.Where(Selection => !Selection.IsTrending)
+      .Include(Thumb => Thumb.Thumbnail)
+        .ThenInclude(Reg => Reg.Regular)
+      .ToListAsync();
+      return data;
     }
 
     // GET: api/Selections/5
