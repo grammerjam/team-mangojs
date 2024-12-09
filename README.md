@@ -31,6 +31,16 @@ cd base-api
 dotnet run
 ```
 
+### Deployments
+
+Staging:
+Frontend: https://black-sand-06df6ac0f.5.azurestaticapps.net/
+API: https://mango-entertainment-dev-api.azurewebsites.net/
+
+Prod:
+Frontend: https://mango-plant-07699860f.5.azurestaticapps.net/
+API: https://mango-entertainment-api.azurewebsites.net/
+
 ### Mango Dot Net
 
 https://www.mermaidchart.com/raw/5f9cedfb-de60-4bfb-9a45-bcf379936800?theme=dark&version=v0.1&format=svg
