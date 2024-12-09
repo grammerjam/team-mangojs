@@ -1,5 +1,6 @@
 using baseapi.Models;
 using Newtonsoft.Json;
+using NuGet.Protocol;
 
 public class Seeder
 {
@@ -17,6 +18,7 @@ public class Seeder
 
     // db.Database.EnsureDeleted();
     _context.Database.EnsureCreated();
+    Console.WriteLine(_context.Selections.ToJson());
     if (!_context.Selections.Any())
     {
       string jsonValue;
@@ -27,9 +29,9 @@ public class Seeder
 
 
       var selections = JsonConvert.DeserializeObject<IList<Selection>>(jsonValue);
-      Console.WriteLine("*************");
-      Console.WriteLine(selections.Count());
-      Console.WriteLine("*************");
+      
+    
+      
       // foreach (var item in selections)
       // {
       //   db.Selections.Add(new Selection

@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using baseapi.Models;
@@ -11,9 +12,11 @@ using baseapi.Models;
 namespace baseapi.Migrations
 {
     [DbContext(typeof(BaseapiContext))]
-    partial class BaseapiContextModelSnapshot : ModelSnapshot
+    [Migration("20241209160233_NoDTO")]
+    partial class NoDTO
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

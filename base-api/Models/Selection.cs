@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json;
 using System.Text.Json.Serialization;
@@ -35,25 +36,48 @@ namespace baseapi.Models
     [JsonPropertyName("isTrending")]
     public bool IsTrending { get; set; }
 
+    public int ThumbnailId { get; set; }
+
+    [JsonPropertyName("thumbnail")]
+    public required Thumbnail Thumbnail { get; set; }
+  }
+
+  public class Thumbnail
+  {
+    [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    
+    public int Id { get; set; }
+
+    public int RegularId { get; set; }
+
     [JsonPropertyName("regular")]
     public required Regular Regular { get; set; }
 
+    public int? TrendingId { get; set; }
+
     [JsonPropertyName("trending")]
-    public Trending? Trending { get; set; }   
+    public Trending? Trending { get; set; }
   }
+
   public class Regular
   {
+    [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    public int Id { get; set; }
+
     [JsonPropertyName("small")]
-    public string? Small { get; set; }
+    public required string Small { get; set; }
 
     [JsonPropertyName("medium")]
-    public string? Medium { get; set; }
+    public required string Medium { get; set; }
 
     [JsonPropertyName("large")]
-    public string? Large { get; set; }
+    public required string Large { get; set; }
   }
   public class Trending
   {
+    [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    public int Id { get; set; }
+
     [JsonPropertyName("small")]
     public string? Small { get; set; }
 
@@ -84,8 +108,6 @@ namespace baseapi.Models
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
       modelBuilder.Entity<Selection>().Property(e => e.Id).ValueGeneratedOnAdd();
-      modelBuilder.Entity<Selection>().OwnsOne(r => r.Regular);
-      modelBuilder.Entity<Selection>().OwnsOne(r => r.Trending);
     }
   }
 }
