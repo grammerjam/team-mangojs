@@ -37,7 +37,7 @@ jobs:
         working-directory: ./base-client
 
       - name: Build Angular app
-        run: npm run build -- --configuration production --output-path dist/base-client
+        run: npm run build -- --configuration staging --output-path dist/base-client
         working-directory: ./base-client
 
       - name: List dist contents
