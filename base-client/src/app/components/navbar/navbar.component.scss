@@ -1,16 +1,74 @@
 @import "_variables";
 
+.nav-bar {
+  width: 100vw;
+  background-color: $mango-semi-dark-blue;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  margin-bottom: 24px;
+
+  @media (min-width: $breakpoint-tablet) {
+    margin: 23px 25px 24px 25px;
+    border-radius: 5px;
+    width: calc(100vw - 50px);
+    justify-content: space-between;
+  }
+}
+
 .nav-container {
   display: grid;
   grid-template-columns: auto 1fr auto;
-  background-color: $mango-semi-dark-blue;
-  margin-bottom: 24px;
+  align-items: center;
+  width: 375px;
+  height: 56px;
+  padding: 0 16px 0 16px;
+
+  .logo {
+    height: 20px;
+    width: 25px;
+    border: 1px solid orange;
+
+    @media (min-width: $breakpoint-tablet) {
+      height: 25.6px;
+      width: 32px;
+    }
+  }
 
   .app-navbar {
+    display: flex;
     align-content: center;
-    text-align: center;
+    justify-content: center;
+    align-items: baseline;
+    border: 1px solid green;
+
     a {
       padding: 0 1rem;
+
+      .navbar-icon {
+        height: 16px;
+
+        @media (min-width: $breakpoint-tablet) {
+          height: 20px;
+        }
+      }
+
     }
+  }
+
+  .avatar {
+    height: 24px;
+    width: 24px;
+    margin-top: 4px;
+    border: 1px solid red;
+
+    @media (min-width: $breakpoint-tablet) {
+      height: 32px;
+      width: 32px;
+    }
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    width: 100%;
   }
 }
