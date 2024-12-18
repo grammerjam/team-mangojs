@@ -1,10 +1,16 @@
-<div class="nav-container">
-<h1>Mango Entertainment</h1>
-<nav class="app-navbar">
-  <a [routerLink]="['/']" routerLinkActive="active" ariaCurrentWhenActive="page">Home</a> 
-  <a [routerLink]="['/movies']" routerLinkActive="active" ariaCurrentWhenActive="page">Movies</a>
-  <a [routerLink]="['/series']" routerLinkActive="active" ariaCurrentWhenActive="page">Series</a>
-  <a [routerLink]="['/bookmarks']" routerLinkActive="active" ariaCurrentWhenActive="page">Bookmarks</a>
-</nav>
-<p>Auth</p>
+<div class="nav-bar">
+  <div class="nav-container">
+    <img class="logo" src="./assets/logo.svg" alt="Logo">
+    <nav class="app-navbar">
+      <a [routerLink]="['/']" routerLinkActive="active" ariaCurrentWhenActive="page"><img
+          class="navbar-icon" src="./assets/icon-nav-home.svg"></a>
+      <a [routerLink]="['/movies']" routerLinkActive="active" ariaCurrentWhenActive="page"><img
+          class="navbar-icon" src="./assets/icon-nav-movies.svg"></a>
+      <a [routerLink]="['/series']" routerLinkActive="active" ariaCurrentWhenActive="page"><img
+          class="navbar-icon" src="./assets/icon-nav-tv-series.svg"></a>
+      <a [routerLink]="['/bookmarks']" routerLinkActive="active" ariaCurrentWhenActive="page"><img
+          class="navbar-icon" src="./assets/icon-nav-bookmark.svg"></a>
+    </nav>
+    <img class="avatar" src="./assets/image-avatar.png" alt="User avatar">
+  </div>
 </div>

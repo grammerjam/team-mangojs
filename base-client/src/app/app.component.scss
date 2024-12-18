@@ -8,7 +8,30 @@
 }
 
 main {
-  display: grid;
   min-height: 100dvh;
+}
+
+.layout {
+  display: grid;
   grid-template-rows: auto auto 1fr;
+  gap: 0;
+
+  @media (min-width: $breakpoint-desktop) {
+    grid-template-rows: 1fr;
+    grid-template-columns: 121px 1fr;
+  }
+}
+
+.content-container {
+  margin-left: 16px;
+  margin-top: 24px;
+
+  @media (min-width: $breakpoint-tablet) {
+    margin-left: 25px;
+    margin-top: 33px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    margin-top: 64px;
+  }
 }
