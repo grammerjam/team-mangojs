@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
-import { RegularCardComponent } from '../../components/regular-card/regular-card.component';
 import { SelectionData } from '../../interfaces/selection-data';
 import Selections from '../../../data.json'
 import { Subscription } from 'rxjs';
 import { SelectionsService } from '../../lib/selections.service';
+import { RegularSectionComponent } from '../../components/regular-section/regular-section.component';
 
 @Component({
   selector: 'app-series',
   standalone: true,
-  imports: [RegularCardComponent],
+  imports: [RegularSectionComponent],
   templateUrl: './series.component.html',
   styleUrl: './series.component.scss'
 })
