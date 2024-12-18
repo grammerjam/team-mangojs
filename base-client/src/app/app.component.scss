@@ -13,25 +13,30 @@ main {
 
 .layout {
   display: grid;
+  grid-template-columns: 1fr;
   grid-template-rows: auto auto 1fr;
+  justify-items: center;
   gap: 0;
 
   @media (min-width: $breakpoint-desktop) {
     grid-template-rows: 1fr;
     grid-template-columns: 121px 1fr;
+    justify-items: start;
+    gap: 25px;
   }
 }
 
 .content-container {
-  margin-left: 16px;
   margin-top: 24px;
+  max-width: calc(100vw - 32px);
 
-  @media (min-width: $breakpoint-tablet) {
-    margin-left: 25px;
+  @media (min-width: $breakpoint-tablet) {    
     margin-top: 33px;
+    max-width: calc(100vw - 50px);
   }
 
   @media (min-width: $breakpoint-desktop) {
     margin-top: 64px;
+    max-width: calc(100vw - 191px);
   }
 }

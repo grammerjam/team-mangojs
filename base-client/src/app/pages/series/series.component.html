@@ -1,8 +1,1 @@
-<section>
-  <h2>Series</h2>
-  <div class="selection-container">
-    @for(selectionData of seriesDataList; track selectionData.id) {
-      <app-regular-card [selectionData]="selectionData"></app-regular-card>
-    }
-  </div>
-</section>
+<app-regular-section sectionTitle="TV Series" [sectionData]="seriesDataList" />
