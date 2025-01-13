@@ -34,7 +34,7 @@ main {
   }
 
   @media (min-width: $breakpoint-desktop) {
-    margin-top: 64px;
+    margin-top: 32px;
     max-width: calc(100vw - 191px);
   }
 }
