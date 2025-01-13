@@ -4,11 +4,12 @@ import Selections from '../../../data.json'
 import { Subscription } from 'rxjs';
 import { SelectionsService } from '../../lib/selections.service';
 import { RegularSectionComponent } from '../../components/regular-section/regular-section.component';
+import { SearchComponent } from '../../components/search/search.component';
 
 @Component({
   selector: 'app-bookmarks',
   standalone: true,
-  imports: [RegularSectionComponent],
+  imports: [RegularSectionComponent, SearchComponent],
   templateUrl: './bookmarks.component.html',
   styleUrl: './bookmarks.component.scss'
 })
