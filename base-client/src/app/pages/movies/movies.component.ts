@@ -4,11 +4,12 @@ import Selections from '../../../data.json'
 import { SelectionsService } from '../../lib/selections.service';
 import { Subscription } from 'rxjs';
 import { RegularSectionComponent } from '../../components/regular-section/regular-section.component';
+import { SearchComponent } from '../../components/search/search.component';
 
 @Component({
   selector: 'app-movies',
   standalone: true,
-  imports: [RegularSectionComponent],
+  imports: [RegularSectionComponent, SearchComponent],
   templateUrl: './movies.component.html',
   styleUrl: './movies.component.scss',
 })
