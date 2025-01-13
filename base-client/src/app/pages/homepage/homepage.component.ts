@@ -5,11 +5,12 @@ import { SelectionsService } from '../../lib/selections.service';
 import { Subscription } from 'rxjs';
 import { TrendingSectionComponent } from '../../components/trending-section/trending-section.component';
 import { RegularSectionComponent } from '../../components/regular-section/regular-section.component';
+import { SearchComponent } from '../../components/search/search.component';
 
 @Component({
   selector: 'app-homepage',
   standalone: true,
-  imports: [AsyncPipe, TrendingSectionComponent, RegularSectionComponent],
+  imports: [AsyncPipe, SearchComponent, TrendingSectionComponent, RegularSectionComponent],
   templateUrl: './homepage.component.html',
   styleUrl: './homepage.component.scss',
 })

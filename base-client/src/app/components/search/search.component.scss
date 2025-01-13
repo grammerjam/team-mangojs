@@ -1,0 +1,20 @@
+@import "_variables";
+
+.search-container {
+    background-color: $mango-semi-dark-blue;
+    border-radius: 5px;
+    padding: 2px;
+    margin-bottom: 24px;
+}
+
+.search-icon {
+  margin-right: 2px;
+  height: 24px;
+  width: 24px;
+}
+
+.search-box {
+  all: unset;
+  width: calc(100% - 28px);
+  text-align: center;
+}

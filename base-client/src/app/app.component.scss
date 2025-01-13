@@ -27,7 +27,6 @@ main {
 }
 
 .content-container {
-  margin-top: 24px;
   max-width: calc(100vw - 32px);
 
   @media (min-width: $breakpoint-tablet) {    
