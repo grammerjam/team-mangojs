@@ -1,0 +1,53 @@
+@import "_variables";
+
+.search-container {
+  background-color: $mango-semi-dark-blue;
+  box-shadow: 1px 0px 3px rgba(0, 0, 0, .2);
+  border-radius: 5px;
+  padding: 2px;
+  margin-bottom: 24px;
+
+  @media (min-width: $breakpoint-tablet) {
+    box-shadow: 3px 0px 3px rgba(0, 0, 0, .2);
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    padding: 4px;
+  }
+}
+
+.search-icon {
+  margin-right: 2px;
+  height: 24px;
+  width: 24px;
+
+  @media (min-width: $breakpoint-tablet) {
+    height: 28px;
+    width: 28px;
+    margin-left: 2px;
+    margin-bottom: 2px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    height: 32px;
+    width: 32px;
+  }
+}
+
+.search-box {
+  all: unset;
+  width: calc(100% - 28px);
+  text-align: center;
+  font-size: 16px;
+  margin-top: 2px;
+
+  @media (min-width: $breakpoint-tablet) {
+    font-size: 24px;
+    width: calc(100% - 34px);
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    width: calc(100% - 42px);
+    margin-top: 4px;
+  }
+}

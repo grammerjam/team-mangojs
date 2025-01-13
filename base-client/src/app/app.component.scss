@@ -27,16 +27,14 @@ main {
 }
 
 .content-container {
-  margin-top: 24px;
   max-width: calc(100vw - 32px);
 
   @media (min-width: $breakpoint-tablet) {    
-    margin-top: 33px;
     max-width: calc(100vw - 50px);
   }
 
   @media (min-width: $breakpoint-desktop) {
-    margin-top: 64px;
+    margin-top: 32px;
     max-width: calc(100vw - 191px);
   }
 }
