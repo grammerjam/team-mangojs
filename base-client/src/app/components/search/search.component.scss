@@ -1,20 +1,38 @@
 @import "_variables";
 
 .search-container {
-    background-color: $mango-semi-dark-blue;
-    border-radius: 5px;
-    padding: 2px;
-    margin-bottom: 24px;
+  background-color: $mango-semi-dark-blue;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, .2);
+  border-radius: 5px;
+  padding: 2px;
+  margin-bottom: 24px;
+
+  @media (min-width: $breakpoint-tablet) {
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, .2);
+  }
 }
 
 .search-icon {
   margin-right: 2px;
   height: 24px;
   width: 24px;
+
+  @media (min-width: $breakpoint-tablet) {
+    height: 28px;
+    width: 28px;
+    margin-left: 2px;
+    margin-bottom: 2px;
+  }
 }
 
 .search-box {
   all: unset;
   width: calc(100% - 28px);
   text-align: center;
+  font-size: 16px;
+
+  @media (min-width: $breakpoint-tablet) {
+    font-size: 24px;
+    width: calc(100% - 34px);
+  }
 }

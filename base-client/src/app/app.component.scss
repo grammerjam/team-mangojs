@@ -30,7 +30,6 @@ main {
   max-width: calc(100vw - 32px);
 
   @media (min-width: $breakpoint-tablet) {    
-    margin-top: 33px;
     max-width: calc(100vw - 50px);
   }
 
