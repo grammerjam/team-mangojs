@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using baseapi.Models;
 using Newtonsoft.Json;
 using System.Text.Json;
+using baseapi.Helpers;
 
 namespace baseapi.Controllers
 {
@@ -61,6 +62,7 @@ namespace baseapi.Controllers
 
     // GET: api/Selections/series
     [HttpGet("series")]
+    [Authorize]
     public async Task<ActionResult<IEnumerable<Selection>>> GetSeries()
     {
       var data = await _context.Selections.Where(Selection => Selection.Category == "TV Series")
@@ -72,6 +74,7 @@ namespace baseapi.Controllers
 
     // GET: api/Selections/movies
     [HttpGet("movies")]
+    [Authorize]
     public async Task<ActionResult<IEnumerable<Selection>>> GetMovies()
     {
       var data = await _context.Selections.Where(Selection => Selection.Category == "Movie")
@@ -83,6 +86,7 @@ namespace baseapi.Controllers
 
     // GET: api/Selections/bookmarks
     [HttpGet("bookmarks")]
+    [Authorize]
     public async Task<ActionResult<IEnumerable<Selection>>> GetBookmarks()
     {
       var data = await _context.Selections.Where(Selection => Selection.IsBookmarked)
@@ -109,6 +113,7 @@ namespace baseapi.Controllers
     // PUT: api/Selections/5
     // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
     [HttpPut("{id}")]
+    [Authorize]
     public async Task<IActionResult> PutSelection(string id, Selection selection)
     {
       if (id != selection.Id)
@@ -140,6 +145,7 @@ namespace baseapi.Controllers
     // POST: api/Selections
     // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
     [HttpPost]
+    [Authorize]
     public async Task<ActionResult<Selection>> PostSelection(Selection selection)
     {
       _context.Selections.Add(selection);
@@ -164,6 +170,7 @@ namespace baseapi.Controllers
 
     // DELETE: api/Selections/5
     [HttpDelete("{id}")]
+    [Authorize]
     public async Task<IActionResult> DeleteSelection(string id)
     {
       var selection = await _context.Selections.FindAsync(id);

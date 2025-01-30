@@ -99,6 +99,7 @@ namespace baseapi.Models
   {
     public BaseapiContext(DbContextOptions<BaseapiContext> options) : base(options) { }
     public DbSet<Selection> Selections { get; set; } = null!;
+    public DbSet<User> Users { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
@@ -108,6 +109,16 @@ namespace baseapi.Models
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
       modelBuilder.Entity<Selection>().Property(e => e.Id).ValueGeneratedOnAdd();
+      modelBuilder.Entity<User>().HasData(
+                new User
+                {
+                  Id = 1,
+                  FirstName = "System",
+                  LastName = "",
+                  Username = "System",
+                  Password = "System",
+                }
+            );
     }
   }
 }
