@@ -8,7 +8,6 @@ using Microsoft.OpenApi.Models;
 using baseapi.Helpers;
 using baseapi.Services;
 
-// var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddCors(options =>
 {
@@ -21,25 +20,6 @@ builder.Services.AddCors(options =>
                       .SetIsOriginAllowedToAllowWildcardSubdomains()
                     );
 });
-
-// builder.Services.AddAuthentication(config => {
-//   config.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-//   config.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-//   config.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
-// }).AddJwtBearer(bearer => {
-//   bearer.RequireHttpsMetadata = false;
-//   bearer.SaveToken = false;
-//   bearer.TokenValidationParameters = new TokenValidationParameters {
-//     ValidateIssuerSigningKey = true,
-//     IssuerSigningKey = new SymmetricSecurityKey(
-//       Encoding.UTF8
-//       .GetBytes(configuration["ApplicationSettings:JWT_Secret")
-//     ),
-//     ValidateIssuer = false,
-//     ValidateAudience = false,
-//     ClockSkew = TimeSpan.Zero
-//   };
-// });
 
 
 

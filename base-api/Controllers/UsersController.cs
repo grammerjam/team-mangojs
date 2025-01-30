@@ -29,7 +29,6 @@ namespace baseapi.Controllers
 
     // POST api/<CustomerController>
     [HttpPost]
-    [Authorize]
     public async Task<IActionResult> Post([FromBody] User userObj)
     {
       userObj.Id = 0;
