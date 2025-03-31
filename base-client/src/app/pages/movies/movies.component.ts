@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { SelectionData } from '../../interfaces/selection-data';
-import Selections from '../../../data.json'
 import { SelectionsService } from '../../lib/selections.service';
 import { Subscription } from 'rxjs';
 import { RegularSectionComponent } from '../../components/regular-section/regular-section.component';
@@ -14,7 +13,7 @@ import { SearchComponent } from '../../components/search/search.component';
   styleUrl: './movies.component.scss',
 })
 export class MoviesComponent {
-  movieDataList: SelectionData[] = Selections.selections.filter((selection) => selection.category === "Movie")
+  movieDataList: SelectionData[] = []
   movieSubscription?: Subscription
   constructor(private selectionsService: SelectionsService) { }
   seriesObservor = {

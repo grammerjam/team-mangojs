@@ -1,6 +1,5 @@
 import { Component, Input } from '@angular/core';
 import { SelectionData } from '../../interfaces/selection-data';
-import Selections from '../../../data.json'
 import { Subscription } from 'rxjs';
 import { SelectionsService } from '../../lib/selections.service';
 import { RegularSectionComponent } from '../../components/regular-section/regular-section.component';
@@ -14,7 +13,7 @@ import { SearchComponent } from '../../components/search/search.component';
   styleUrl: './bookmarks.component.scss'
 })
 export class BookmarksComponent {
-  bookmarkDataList: SelectionData[] = Selections.selections.filter((selection) => selection.isBookmarked === true)
+  bookmarkDataList: SelectionData[] = []
   bookmarkSubscription?: Subscription
   constructor(private selectionsService: SelectionsService) { }
   seriesObservor = {
