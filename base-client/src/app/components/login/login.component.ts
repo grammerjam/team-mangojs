@@ -30,8 +30,6 @@ export class LoginComponent {
   // }
 
   onLogin() {
-    // debugger;
-    console.log(this.form.getRawValue())
     this.http.post("http://localhost:5100/api/Users/authenticate", this.form.getRawValue()).subscribe((res: any) => {
       if (res.Token) {
         alert("Login Success");

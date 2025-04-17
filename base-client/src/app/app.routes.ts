@@ -13,9 +13,6 @@ import { LayoutComponent } from './components/layout/layout.component';
 //   { path: '', component: AppComponent, 
 //     children: [
 //       { path: 'home', component: HomepageComponent },
-//   { path: 'movies', component: MoviesComponent },
-//   { path: 'series', component: SeriesComponent },
-//   { path: 'bookmarks', component: BookmarksComponent }
 // ];
 
 
@@ -29,11 +26,15 @@ export const routes: Routes = [
     path: 'login',
     component: LoginComponent
   },
+
   {
     path: '',
     component: LayoutComponent,
     children: [
-      { path: 'home', component: HomepageComponent },
+      { path: 'home', component: HomepageComponent, title: 'Mango Entertainment: Home' },
+      { path: 'movies', component: MoviesComponent },
+      { path: 'series', component: SeriesComponent },
+      { path: 'bookmarks', component: BookmarksComponent }
     ]
   }
 ];

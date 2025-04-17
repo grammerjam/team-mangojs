@@ -1,5 +1,9 @@
 import { HttpInterceptorFn } from '@angular/common/http';
 
 export const authInterceptor: HttpInterceptorFn = (req, next) => {
-  return next(req);
+  const authToken = "Bearer " + localStorage.getItem('angular18Token') || '';
+  const newReq = req.clone({
+    headers: req.headers.append('X-Authentication-Token', authToken),
+  });
+  return next(newReq);
 };

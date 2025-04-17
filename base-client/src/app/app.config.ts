@@ -4,14 +4,14 @@ import { provideRouter, withComponentInputBinding } from '@angular/router';
 import { routes } from './app.routes';
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { authInterceptor } from './interceptors/auth.interceptor';
-import { loggerInterceptor } from './interceptors/logger.interceptor';
+// import { loggerInterceptor } from './interceptors/logger.interceptor';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes, withComponentInputBinding()),
     provideHttpClient(
-        withInterceptors([authInterceptor, loggerInterceptor]),
+        withInterceptors([authInterceptor]),
     )
   ]
 };
