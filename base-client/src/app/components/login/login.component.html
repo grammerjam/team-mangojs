@@ -1,0 +1,8 @@
+<h1>Login</h1>
+<form [formGroup]="form">
+  <input type="text" placeholder="Username" formControlName="Username">
+  <br>
+  <input type="password" placeholder="Password" formControlName="Password">
+  <br>
+  <button (click)="onLogin()" type="submit">Log In</button>
+</form>

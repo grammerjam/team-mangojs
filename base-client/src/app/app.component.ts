@@ -5,11 +5,12 @@ import { MoviesComponent } from "./pages/movies/movies.component";
 import { SeriesComponent } from "./pages/series/series.component";
 import { BookmarksComponent } from "./pages/bookmarks/bookmarks.component";
 import { NavbarComponent } from "./components/navbar/navbar.component";
+import { LoginComponent } from "./components/login/login.component";
 
 @Component({
   selector: "app-root",
   standalone: true,
-  imports: [RouterOutlet, HomepageComponent, MoviesComponent, SeriesComponent, BookmarksComponent, NavbarComponent],
+  imports: [RouterOutlet, HomepageComponent, MoviesComponent, SeriesComponent, BookmarksComponent, NavbarComponent, LoginComponent],
   templateUrl: "./app.component.html",
   styleUrl: "./app.component.scss",
 })

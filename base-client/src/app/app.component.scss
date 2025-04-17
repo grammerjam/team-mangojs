@@ -1,40 +1,40 @@
-@import url(https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap);
-@import "../styles/variables";
+// @import url(https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap);
+// @import "../styles/variables";
 
-* {
-  font-family: 'Outfit', sans-serif;
-  background-color: $mango-dark-blue;
-  color: $mango-pure-white;
-}
+// * {
+//   font-family: 'Outfit', sans-serif;
+//   background-color: $mango-dark-blue;
+//   color: $mango-pure-white;
+// }
 
-main {
-  min-height: 100dvh;
-}
+// main {
+//   min-height: 100dvh;
+// }
 
-.layout {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto auto 1fr;
-  justify-items: center;
-  gap: 0;
+// .layout {
+//   display: grid;
+//   grid-template-columns: 1fr;
+//   grid-template-rows: auto auto 1fr;
+//   justify-items: center;
+//   gap: 0;
 
-  @media (min-width: $breakpoint-desktop) {
-    grid-template-rows: 1fr;
-    grid-template-columns: 121px 1fr;
-    justify-items: start;
-    gap: 25px;
-  }
-}
+//   @media (min-width: $breakpoint-desktop) {
+//     grid-template-rows: 1fr;
+//     grid-template-columns: 121px 1fr;
+//     justify-items: start;
+//     gap: 25px;
+//   }
+// }
 
-.content-container {
-  max-width: calc(100vw - 32px);
+// .content-container {
+//   max-width: calc(100vw - 32px);
 
-  @media (min-width: $breakpoint-tablet) {    
-    max-width: calc(100vw - 50px);
-  }
+//   @media (min-width: $breakpoint-tablet) {    
+//     max-width: calc(100vw - 50px);
+//   }
 
-  @media (min-width: $breakpoint-desktop) {
-    margin-top: 32px;
-    max-width: calc(100vw - 191px);
-  }
-}
+//   @media (min-width: $breakpoint-desktop) {
+//     margin-top: 32px;
+//     max-width: calc(100vw - 191px);
+//   }
+// }

@@ -2,15 +2,18 @@
   <div class="nav-container">
     <img class="logo" src="./assets/logo.svg" alt="Logo">
     <nav class="navbar-icons">
-      <a [routerLink]="['/']" routerLinkActive="active" ariaCurrentWhenActive="page"><img
-          class="navbar-icon" src="./assets/icon-nav-home.svg"></a>
-      <a [routerLink]="['/movies']" routerLinkActive="active" ariaCurrentWhenActive="page"><img
-          class="navbar-icon" src="./assets/icon-nav-movies.svg"></a>
-      <a [routerLink]="['/series']" routerLinkActive="active" ariaCurrentWhenActive="page"><img
-          class="navbar-icon" src="./assets/icon-nav-tv-series.svg"></a>
-      <a [routerLink]="['/bookmarks']" routerLinkActive="active" ariaCurrentWhenActive="page"><img
-          class="navbar-icon" src="./assets/icon-nav-bookmark.svg"></a>
+      <a [routerLink]="['/']" routerLinkActive="active" ariaCurrentWhenActive="page"><img class="navbar-icon"
+          src="./assets/icon-nav-home.svg"></a>
+      <a [routerLink]="['/movies']" routerLinkActive="active" ariaCurrentWhenActive="page"><img class="navbar-icon"
+          src="./assets/icon-nav-movies.svg"></a>
+      <a [routerLink]="['/series']" routerLinkActive="active" ariaCurrentWhenActive="page"><img class="navbar-icon"
+          src="./assets/icon-nav-tv-series.svg"></a>
+      <a [routerLink]="['/bookmarks']" routerLinkActive="active" ariaCurrentWhenActive="page"><img class="navbar-icon"
+          src="./assets/icon-nav-bookmark.svg"></a>
     </nav>
-    <img class="avatar" src="./assets/image-avatar.png" alt="User avatar">
+    <div>
+      <a [routerLink]="['/login']" routerLinkActive="active" ariaCurrentWhenActive="page">Login</a>
+      <img class="avatar" src="./assets/image-avatar.png" alt="User avatar">
+    </div>
   </div>
 </div>
