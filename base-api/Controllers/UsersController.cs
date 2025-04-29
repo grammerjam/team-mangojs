@@ -31,7 +31,7 @@ namespace baseapi.Controllers
     [HttpPost]
     public async Task<IActionResult> Post([FromBody] User userObj)
     {
-      userObj.Id = 0;
+      // userObj.Id = 0;
       return Ok(await _userService.AddAndUpdateUser(userObj));
     }
 
